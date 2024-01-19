@@ -1,0 +1,126 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #5d93d040;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 25px;
+  position: relative;
+  width: 318px;
+}
+
+.card .frame {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.card .fun-fact {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.card .text-wrapper {
+  flex: 1;
+  font-family: "Roboto-Medium", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+}
+
+.card .div {
+  align-self: stretch;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.card.light {
+  align-items: center;
+  background-color: var(--variable-collection-text);
+}
+
+.card.hover {
+  align-items: flex-start;
+  background-color: #25252d;
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
+}
+
+.card.default {
+  align-items: center;
+  background-color: #25252d;
+}
+
+.card.variant-4 {
+  align-items: flex-start;
+  background-color: var(--variable-collection-text);
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
+}
+
+.card.light .frame {
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  justify-content: center;
+}
+
+.card.hover .frame {
+  gap: 10px;
+}
+
+.card.default .frame {
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  justify-content: center;
+}
+
+.card.variant-4 .frame {
+  gap: 10px;
+}
+
+.card.light .text-wrapper {
+  color: var(--bg);
+}
+
+.card.hover .text-wrapper {
+  color: var(--variable-collection-text);
+}
+
+.card.default .text-wrapper {
+  color: var(--variable-collection-text);
+}
+
+.card.variant-4 .text-wrapper {
+  color: var(--bg);
+}
+
+.card.light .div {
+  color: var(--bg);
+}
+
+.card.hover .div {
+  color: var(--variable-collection-text);
+}
+
+.card.default .div {
+  color: var(--variable-collection-text);
+}
+
+.card.variant-4 .div {
+  color: var(--bg);
+}

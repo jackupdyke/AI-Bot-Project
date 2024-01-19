@@ -1,0 +1,140 @@
+.ask {
+  align-items: flex-end;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px #5d93d01a;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: center;
+  padding: 25px 50px;
+  position: relative;
+}
+
+.ask .frame {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.ask .text-wrapper {
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: 1008px;
+  z-index: 1;
+}
+
+.ask .div {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 27px;
+  height: 21px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.ask .text-wrapper-2 {
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.ask .icon-park-outline {
+  align-self: stretch !important;
+  position: relative !important;
+  width: 24px !important;
+  z-index: 0 !important;
+}
+
+.ask .send-instance {
+  height: 17.67px !important;
+  margin-top: -0.33px !important;
+  position: relative !important;
+  width: 20.56px !important;
+}
+
+.ask.light-hover {
+  background-color: var(--variable-collection-text);
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
+}
+
+.ask.hover {
+  background-color: #25252d;
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
+}
+
+.ask.light {
+  background-color: var(--variable-collection-text);
+}
+
+.ask.default {
+  background-color: #25252d;
+}
+
+.ask.light-hover .frame {
+  height: 21px;
+}
+
+.ask.hover .frame {
+  height: 21px;
+}
+
+.ask.light .frame {
+  flex: 0 0 auto;
+}
+
+.ask.default .frame {
+  flex: 0 0 auto;
+}
+
+.ask.light-hover .text-wrapper {
+  color: var(--bg);
+}
+
+.ask.hover .text-wrapper {
+  color: var(--variable-collection-text);
+}
+
+.ask.light .text-wrapper {
+  color: var(--bg);
+}
+
+.ask.default .text-wrapper {
+  color: var(--variable-collection-text);
+}
+
+.ask.light-hover .text-wrapper-2 {
+  color: var(--bg);
+}
+
+.ask.hover .text-wrapper-2 {
+  color: var(--variable-collection-text);
+}
+
+.ask.light .text-wrapper-2 {
+  color: var(--bg);
+}
+
+.ask.default .text-wrapper-2 {
+  color: var(--variable-collection-text);
+}
