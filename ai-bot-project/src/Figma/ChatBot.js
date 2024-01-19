@@ -1,9 +1,9 @@
 import React from "react";
 import { Ask } from "./Ask";
 import { Card } from "./Card";
-import { EtChat } from "./EtChat";
-import { IconParkOutlineVoice } from "./IconParkOutlineVoice";
-import { Send } from "./Send";
+// import { EtChat } from "./EtChat";
+// import { IconParkOutlineVoice } from "./IconParkOutlineVoice";
+//import { Send } from "./Send";
 import "./ChatBot.css";
 
 export const Desktop = () => {
@@ -34,13 +34,11 @@ export const Desktop = () => {
                 </div>
                 <div className="frame-9">
                     <div className="frame-10">
-                        <EtChat className="et-chat" />
+                        <p className="et-chat" />
                         <div className="text-wrapper-4">New topic</div>
                     </div>
                     <Ask
                         className="ask-instance"
-                        icon={<IconParkOutlineVoice className="icon-park-outline-voice" />}
-                        override={<Send className="icon-instance-node" />}
                         property1="default"
                     />
                 </div>

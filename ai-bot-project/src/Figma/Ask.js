@@ -1,15 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useReducer } from "react";
-import { IconComponentNode } from "./IconComponentNode";
-import { NamecandidateNameSendScore101 } from "./NamecandidateNameSendScore101";
+//import { IconComponentNode } from "./IconComponentNode";
+//import { NamecandidateNameSendScore101 } from "./NamecandidateNameSendScore101";
 import "./Ask.css";
 
 export const Ask = ({
     property1,
     className,
-    icon = <IconComponentNode className="icon-park-outline" />,
-    override = <NamecandidateNameSendScore101 className="send-instance" color="url(#paint0_linear_4_78)" />,
 }) => {
     const [state, dispatch] = useReducer(reducer, {
         property1: property1 || "default",
@@ -26,12 +24,11 @@ export const Ask = ({
             }}
         >
             <div className="frame">
-                <div className="text-wrapper">Ask me anything...</div>
-                {icon}
+                <input className="text-wrapper" type="text" name="name" />
+                {/* <div className="text-wrapper">Ask me anything...</div> */}
             </div>
             <div className="div">
                 <div className="text-wrapper-2">0/4000</div>
-                {override}
             </div>
         </div>
     );
