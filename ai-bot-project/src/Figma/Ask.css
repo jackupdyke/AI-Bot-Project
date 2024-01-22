@@ -38,6 +38,7 @@
   height: 21px;
   justify-content: flex-end;
   position: relative;
+  color: white;
 }
 
 .ask .text-wrapper-2 {
@@ -71,16 +72,14 @@
   background-color: var(--variable-collection-text);
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
-    1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
 }
 
 .ask.hover {
   background-color: #25252d;
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
-    1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
 }
 
 .ask.light {

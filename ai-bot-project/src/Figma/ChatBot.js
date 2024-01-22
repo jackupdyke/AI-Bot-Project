@@ -1,19 +1,18 @@
 import React from "react";
 import { Ask } from "./Ask";
 import { Card } from "./Card";
-// import { EtChat } from "./EtChat";
-// import { IconParkOutlineVoice } from "./IconParkOutlineVoice";
-//import { Send } from "./Send";
+import chat from './Icons/chat.png';
 import "./ChatBot.css";
+import bot from './Icons/bot.png';
 
 export const Desktop = () => {
     return (
         <div className="desktop">
-            <img className="img" alt="Frame" src="frame-14.svg" />
+            {/* <img className="img" alt="Frame" src="frame-14.svg" /> */}
             <div className="frame-4">
                 <div className="frame-5">
                     <div className="element-wrapper">
-                        <img className="element" alt="Element" src="1700166831877-removebg-preview-1-1.png" />
+                        <img className="element" src={bot} />
                     </div>
                     <div className="div-wrapper">
                         <p className="p">GPT Chat Bot is your AI-powered copilot for the web</p>
@@ -34,7 +33,11 @@ export const Desktop = () => {
                 </div>
                 <div className="frame-9">
                     <div className="frame-10">
-                        <p className="et-chat" />
+                        <img
+                            className="chat-icon"
+                            src={chat}
+
+                        />
                         <div className="text-wrapper-4">New topic</div>
                     </div>
                     <Ask

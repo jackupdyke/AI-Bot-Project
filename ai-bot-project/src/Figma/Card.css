@@ -7,6 +7,7 @@
   padding: 10px 25px;
   position: relative;
   width: 318px;
+  color: white;
 }
 
 .card .frame {
@@ -55,8 +56,7 @@
   background-color: #25252d;
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
-    1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
 }
 
 .card.default {
@@ -69,8 +69,7 @@
   background-color: var(--variable-collection-text);
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
-    1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
 }
 
 .card.light .frame {
