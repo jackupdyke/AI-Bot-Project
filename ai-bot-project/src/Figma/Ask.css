@@ -4,7 +4,7 @@
   box-shadow: 1px 1px 10px #5d93d01a;
   display: inline-flex;
   flex-direction: column;
-  gap: 35px;
+  /* gap: 20px; */
   justify-content: center;
   padding: 25px 50px;
   position: relative;
@@ -14,7 +14,7 @@
   align-items: flex-start;
   align-self: stretch;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   width: 100%;
 }
@@ -68,18 +68,28 @@
   width: 20.56px !important;
 }
 
+.submit-icon {
+  height: 40px !important;
+  position: relative !important;
+  width: 40px !important;
+  padding-top: 40px;
+  left: -50px;
+}
+
 .ask.light-hover {
   background-color: var(--variable-collection-text);
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
 }
 
 .ask.hover {
   background-color: #25252d;
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208)) 1;
+  border-image: linear-gradient(to bottom, rgb(122, 81, 161), rgb(93, 147, 208))
+    1;
 }
 
 .ask.light {

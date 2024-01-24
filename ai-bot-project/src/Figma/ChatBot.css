@@ -72,9 +72,11 @@
 .desktop .p {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(180deg,
-      rgb(122, 81, 161) 0%,
-      rgb(93, 147, 208) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(122, 81, 161) 0%,
+    rgb(93, 147, 208) 100%
+  );
   background-clip: text;
   color: transparent;
   flex: 1;
@@ -128,6 +130,7 @@
 }
 
 .desktop .frame-9 {
+  justify-content: center;
   align-items: flex-start;
   align-self: stretch;
   display: flex;
@@ -139,9 +142,11 @@
 
 .desktop .frame-10 {
   align-items: center;
-  background: linear-gradient(180deg,
-      rgb(122, 81, 161) 0%,
-      rgb(93, 147, 208) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(122, 81, 161) 0%,
+    rgb(93, 147, 208) 100%
+  );
   border-radius: 20px;
   display: inline-flex;
   flex: 0 0 auto;
