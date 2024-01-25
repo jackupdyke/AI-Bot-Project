@@ -6,6 +6,9 @@ import "./ChatBot.css";
 import bot from './Icons/bot.png';
 
 export const Desktop = () => {
+
+    const [aIResoponse, setAIResponse] = React.useState("");
+
     return (
         <div className="desktop">
             {/* <img className="img" alt="Frame" src="frame-14.svg" /> */}
@@ -31,6 +34,9 @@ export const Desktop = () => {
                         <Card className="card-instance" funFact="fun-fact-8.png" property1="default" />
                     </div>
                 </div>
+                <div>
+                    <p>{aIResoponse}</p>
+                </div>
                 <div className="frame-9">
                     <div className="frame-10">
                         <img
@@ -43,6 +49,7 @@ export const Desktop = () => {
                     <Ask
                         className="ask-instance"
                         property1="default"
+                        setAIResponse={aIResoponse}
                     />
                 </div>
             </div>

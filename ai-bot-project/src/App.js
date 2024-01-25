@@ -6,12 +6,21 @@ import React from "react";
 function App() {
   const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-  
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
+
+
+  // React.useEffect(() => {
+  //   fetch("/open")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
+
+
+
   return (
     <div className="App">
       <p>{!data ? "Loading..." : data}</p>
