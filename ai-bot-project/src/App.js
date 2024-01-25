@@ -1,10 +1,20 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import { Desktop } from './Figma/ChatBot.js';
 import './App.css';
+import React from "react";
 
 function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+  
   return (
     <div className="App">
+      <p>{!data ? "Loading..." : data}</p>
       <Desktop />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
