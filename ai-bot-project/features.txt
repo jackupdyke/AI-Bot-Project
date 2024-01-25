@@ -1,0 +1,13 @@
+Features:
+Prompt Bot for recommendations/general questions
+Get recommendations and topic ideas set up
+Add pre-prompted recommendations on home screen
+Deploy app to the cloud(Azure)
+Add log-in
+*improve prompt/upskill in prompt engineering
+
+Stretch:
+incorporate spotify API
+incorporate spotify player
+include album covers/images on responses
+personalized home screens based on previous history
