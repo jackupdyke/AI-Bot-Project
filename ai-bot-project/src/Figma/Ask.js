@@ -8,79 +8,87 @@ import "./Ask.css";
 //import axios from "axios";
 
 export const Ask = ({
-  //property1,
-  className,
+    //property1,
+    className,
+    aIResoponseArray,
+    setAIResponseArray,
+    inputValueArray,
+    setInputValueArray,
 }) => {
-  // const [state, dispatch] = useReducer(reducer, {
-  //     property1: property1 || "default",
-  // });
+    // const [state, dispatch] = useReducer(reducer, {
+    //     property1: property1 || "default",
+    // });
 
-  const [inputValue, setInputValue] = React.useState("");
-  const [inputCharCount, setInputCharCount] = React.useState(0);
-  const [openAiResponse, setOpenAiResponse] = React.useState("");
-  const makeOpenAIPost = async () => {
-    try {
-      const response = await fetch("http://localhost:3002/open", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: inputValue }),
-      });
+    const [inputValue, setInputValue] = React.useState("");
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
 
-      const data = await response.json();
-      console.log(data.message.choices[0].message.content);
-      setOpenAiResponse(data.message.choices[0].message.content);
-      console.log(data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+    const [inputCharCount, setInputCharCount] = React.useState(0);
 
-  return (
-    <>
-      <div
-        className={`ask  
+    const makeOpenAIPost = async () => {
+        setInputValueArray([...inputValueArray, inputValue]);
+        try {
+            const response = await fetch("http://localhost:3002/open", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message: inputValue }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data.message.choices[0].message.content);
+            setAIResponseArray([...aIResoponseArray, data.message.choices[0].message.content]);
+            // setAIResponse(data.message.choices[0].message.content);
+            console.log(data);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
+    return (
+        <>
+            <div
+                className={`ask  
             ${className}`}
-        // onMouseEnter={() => {
-        //     dispatch("mouse_enter");
-        // }}
-        // onMouseLeave={() => {
-        //     dispatch("mouse_leave");
-        // }}
-      >
-        <div className="frame">
-          <input
-            className="ask text-wrapper"
-            type="text"
-            name="name"
-            placeholder="Ask me anything..."
-            onChange={(event) => {
-              setInputValue(event.target.value);
-              setInputCharCount(event.target.value.length);
-            }}
-          />
-        </div>
+            // onMouseEnter={() => {
+            //     dispatch("mouse_enter");
+            // }}
+            // onMouseLeave={() => {
+            //     dispatch("mouse_leave");
+            // }}
+            >
+                <div className="frame">
+                    <input
+                        className="ask text-wrapper"
+                        type="text"
+                        name="name"
+                        placeholder="Ask me anything..."
+                        onChange={(event) => {
+                            setInputValue(event.target.value);
+                            setInputCharCount(event.target.value.length);
+                        }}
+                    />
+                </div>
 
-        <div className="div">
-          <p>{openAiResponse}</p>
-          <div className="ask text-wrapper-2">{inputCharCount}/4000</div>
-        </div>
-      </div>
-      <div className="submit">
-        <img
-          className="submit-icon"
-          src={submitIcon}
-          alt="test"
-          onClick={makeOpenAIPost}
-        />
-      </div>
-    </>
-  );
+                {/* <div className="div">
+                    <p>{openAiResponse}</p>
+                    <div className="ask text-wrapper-2">{inputCharCount}/4000</div>
+                </div> */}
+            </div>
+            <div className="submit">
+                <img
+                    className="submit-icon"
+                    src={submitIcon}
+                    alt="test"
+                    onClick={makeOpenAIPost}
+                />
+            </div>
+        </>
+    );
 };
 
 // function reducer(state, action) {
@@ -124,6 +132,6 @@ export const Ask = ({
 // }
 
 Ask.propTypes = {
-  property1: PropTypes.oneOf(["hover", "light-hover", "light", "default"]),
-  openAiResponse: PropTypes.func.isRequired,
+    property1: PropTypes.oneOf(["hover", "light-hover", "light", "default"]),
+    openAiResponse: PropTypes.func.isRequired,
 };

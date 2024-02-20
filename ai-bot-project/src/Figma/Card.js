@@ -3,21 +3,14 @@ import React from "react";
 import { useReducer } from "react";
 import "./Card.css";
 import lightbulb from './Icons/lightbulb.png';
+import SuggestedQuestions from "./suggestedQuestions";
 
-export const Card = ({ property1, className, funFact = "fun-fact-2.png" }) => {
-    const [state, dispatch] = useReducer(reducer, {
-        property1: property1 || "default",
-    });
+export const Card = ({ className, funFact = "fun-fact-2.png", topic, question, inputValueArray, setInputValueArray }) => {
 
     return (
         <div
-            className={`card ${state.property1} ${className}`}
-            onMouseEnter={() => {
-                dispatch("mouse_enter");
-            }}
-            onMouseLeave={() => {
-                dispatch("mouse_leave");
-            }}
+            className={`card ${className}`}
+            onClick={() => { setInputValueArray([...inputValueArray, SuggestedQuestions[0].question]) }}
         >
             <div className="frame">
                 <img
@@ -34,52 +27,12 @@ export const Card = ({ property1, className, funFact = "fun-fact-2.png" }) => {
                 //                 : funFact
                 // }
                 />
-                <div className="text-wrapper">Topic</div>
+                <div className="text-wrapper">{topic}</div>
             </div>
-            <p className="div">Placeholder for different recommendations</p>
+            <p className="div">{question}</p>
         </div>
     );
 };
-
-function reducer(state, action) {
-    if (state.property1 === "default") {
-        switch (action) {
-            case "mouse_enter":
-                return {
-                    property1: "hover",
-                };
-        }
-    }
-
-    if (state.property1 === "hover") {
-        switch (action) {
-            case "mouse_leave":
-                return {
-                    property1: "default",
-                };
-        }
-    }
-
-    if (state.property1 === "light") {
-        switch (action) {
-            case "mouse_enter":
-                return {
-                    property1: "variant-4",
-                };
-        }
-    }
-
-    if (state.property1 === "variant-4") {
-        switch (action) {
-            case "mouse_leave":
-                return {
-                    property1: "light",
-                };
-        }
-    }
-
-    return state;
-}
 
 Card.propTypes = {
     property1: PropTypes.oneOf(["variant-4", "hover", "light", "default"]),
