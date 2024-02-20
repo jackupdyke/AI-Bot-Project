@@ -3,14 +3,18 @@ import React from "react";
 import { useReducer } from "react";
 import "./Card.css";
 import lightbulb from './Icons/lightbulb.png';
-import SuggestedQuestions from "./suggestedQuestions";
 
-export const Card = ({ className, funFact = "fun-fact-2.png", topic, question, inputValueArray, setInputValueArray }) => {
+export const Card = ({ className, topic, question, makeOpenAIPost, setInputValue }) => {
+
+    const makeAPICall = async () => {
+        await setInputValue(question);
+        makeOpenAIPost(question);
+    }
 
     return (
         <div
             className={`card ${className}`}
-            onClick={() => { setInputValueArray([...inputValueArray, SuggestedQuestions[0].question]) }}
+            onClick={makeAPICall}
         >
             <div className="frame">
                 <img

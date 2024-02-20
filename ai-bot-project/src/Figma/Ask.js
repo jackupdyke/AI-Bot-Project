@@ -10,44 +10,43 @@ import "./Ask.css";
 export const Ask = ({
     //property1,
     className,
-    aIResoponseArray,
-    setAIResponseArray,
-    inputValueArray,
-    setInputValueArray,
+    inputValue,
+    setInputValue,
+    makeOpenAIPost
 }) => {
     // const [state, dispatch] = useReducer(reducer, {
     //     property1: property1 || "default",
     // });
 
-    const [inputValue, setInputValue] = React.useState("");
+
 
 
     const [inputCharCount, setInputCharCount] = React.useState(0);
 
-    const makeOpenAIPost = async () => {
-        setInputValueArray([...inputValueArray, inputValue]);
-        try {
-            const response = await fetch("http://localhost:3002/open", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ message: inputValue }),
-            });
+    // const makeOpenAIPost = async () => {
+    //     setInputValueArray([...inputValueArray, inputValue]);
+    //     try {
+    //         const response = await fetch("http://localhost:3002/open", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify({ message: inputValue }),
+    //         });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! Status: ${response.status}`);
+    //         }
 
-            const data = await response.json();
-            console.log(data.message.choices[0].message.content);
-            setAIResponseArray([...aIResoponseArray, data.message.choices[0].message.content]);
-            // setAIResponse(data.message.choices[0].message.content);
-            console.log(data);
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    };
+    //         const data = await response.json();
+    //         console.log(data.message.choices[0].message.content);
+    //         setAIResponseArray([...aIResoponseArray, data.message.choices[0].message.content]);
+    //         // setAIResponse(data.message.choices[0].message.content);
+    //         console.log(data);
+    //     } catch (error) {
+    //         console.error("Error:", error);
+    //     }
+    // };
 
     return (
         <>
@@ -71,6 +70,7 @@ export const Ask = ({
                             setInputValue(event.target.value);
                             setInputCharCount(event.target.value.length);
                         }}
+                        onKeyDown={(event) => { event.key === "Enter" && makeOpenAIPost() && setInputValue("") }}
                     />
                 </div>
 
